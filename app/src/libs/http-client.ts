@@ -1,4 +1,5 @@
 import ky, { HTTPError } from "ky";
+import { signinUrl } from "./api";
 
 export const httpClient = ky.create({
   credentials: "include",
@@ -7,7 +8,7 @@ export const httpClient = ky.create({
     beforeError: [
       (err: HTTPError) => {
         if (err.response.status === 401 || err.response.status === 403) {
-          document.location.replace("/app/auth/signin");
+          document.location.replace(signinUrl);
         }
         console.error("ky hooks beforeError", err);
         return err;

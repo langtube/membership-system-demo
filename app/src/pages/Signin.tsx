@@ -28,7 +28,11 @@ export default function Signin() {
         height: "100vh",
       }}
     >
-      <LoginForm title="Web App" subTitle="请登录后访问" submitter={false}>
+      <LoginForm
+        title={process.env.REACT_APP_NAME}
+        subTitle="请登录后访问"
+        submitter={false}
+      >
         {roles.map((role) => (
           <Button
             key={role}

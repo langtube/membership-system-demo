@@ -10,12 +10,13 @@ import Signin from "./pages/Signin";
 import UserProfilePage from "./pages/UserProfile";
 import TeamMembersPage from "./pages/TeamMembers";
 import WorkspacesPage from "./pages/Workspaces";
+import { signinUrl } from "./libs/api";
 
 export function Routes() {
   return (
-    <BrowserRouter basename="/app">
+    <BrowserRouter>
       <Switch>
-        <Route path="/auth/signin">
+        <Route path={signinUrl}>
           <Signin />
         </Route>
         <Layout>

@@ -1,3 +1,4 @@
+import { message } from "antd";
 import create from "zustand";
 
 import { profileApiUrl } from "./api/constants";
@@ -33,9 +34,13 @@ export const useUserSessionStore = create<UserSessionStore>((set, get) => ({
 }));
 
 async function fetchProfile() {
-  const response = await httpClient.get(profileApiUrl);
-  const result = await response.json();
-  if (response.ok) {
-    return result;
+  try {
+    const response = await httpClient.get(profileApiUrl);
+    const result = await response.json();
+    if (response.ok) {
+      return result;
+    }
+  } catch (e: any) {
+    message.error("获取数据失败 " + e?.message);
   }
 }

@@ -1,9 +1,9 @@
-export const baseUrl = "http://localhost:3003";
+export const signinUrl = "/auth/signin";
 
-export const signinUrl = baseUrl + "/auth/signin";
+export const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-export const signinApiUrl = baseUrl + "/api/auth/signin";
-export const profileApiUrl = baseUrl + "/api/user/profile";
+export const signinApiUrl = apiBaseUrl + "/auth/signin";
+export const profileApiUrl = apiBaseUrl + "/user/profile";
 
-export const teamMembersApiUrl = baseUrl + "/api/team-members";
-export const workspacesApiUrl = baseUrl + "/api/workspaces";
+export const teamMembersApiUrl = apiBaseUrl + "/team-members";
+export const workspacesApiUrl = apiBaseUrl + "/workspaces";

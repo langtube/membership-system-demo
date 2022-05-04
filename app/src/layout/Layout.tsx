@@ -10,6 +10,7 @@ import { Link, Redirect, useLocation } from "react-router-dom";
 
 import { useUserSessionStore } from "../libs/session";
 import { HeaderRight } from "./HeaderRight";
+import { signinUrl } from "../libs/api";
 
 export function Layout({ children }: any) {
   const location = useLocation();
@@ -34,7 +35,7 @@ export function Layout({ children }: any) {
     return (
       <Redirect
         to={{
-          pathname: "/auth/signin",
+          pathname: signinUrl,
           state: { from: location.pathname },
         }}
       />
@@ -78,7 +79,7 @@ export function Layout({ children }: any) {
     >
       <ProLayout
         logo={null}
-        title="Web App"
+        title={"App name"}
         route={routes}
         menu={{ defaultOpenAll: true }}
         location={{
