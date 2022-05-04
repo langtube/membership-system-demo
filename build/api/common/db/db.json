@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": "free",
+      "email": "free-user@example.com",
+      "role": "free",
+      "accessTags": {}
+    },
+    {
+      "id": "basic",
+      "email": "basic-user@example.com",
+      "role": "basic",
+      "accessTags": {
+        "access-team-member": 5
+      }
+    },
+    {
+      "id": "pro",
+      "email": "pro-user@example.com",
+      "role": "pro"
+    }
+  ],
+  "roles": [
+    {
+      "name": "free"
+    },
+    {
+      "name": "basic",
+      "accessTags": {
+        "access-team-member": 5
+      }
+    },
+    {
+      "name": "pro",
+      "accessTags": {
+        "access-team-member": 10,
+        "access-workspace": 10
+      }
+    }
+  ],
+  "team-members": [
+    {
+      "id": "9e573101-d1de-4c67-872b-f5e73fedc541",
+      "ownerId": "basic",
+      "email": "a",
+      "createdAt": "2022-05-04T08:18:32.286Z"
+    }
+  ],
+  "workspaces": []
+}
