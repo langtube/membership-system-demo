@@ -6,19 +6,19 @@
 2. 切换到代码目录 `cd membership-system-demo`
 3. 启动 docker `docker-compose up`
 
+### 如何体验
+
+- 启动 docker 后可打开 http://localhost:3003 体验 Web App，
+  或 打开 http://localhost:3003/api/doc 直接测试 API
+- 登录页有三个按钮，可分别登录为相关权限的用户
+- 点击页面右上角的`切换用户`按钮返回登录页
+
 ### 重新编译
 
-运行代码根目录运行
+在代码根目录
 
 1. 赋予执行权限 `chmod +x ./build.sh `
 2. 执行 `./build.sh`
-
-## 如何体验
-
-1. 启动 docker 后可打开 http://localhost:3003 体验 Web App，
-   或 打开 http://localhost:3003/api/doc 直接测试 API
-2. 登录页有三个按钮，可分别登录为相关权限的用户
-3. 点击页面右上角的`切换用户`按钮返回登录页
 
 ## 实现原理
 
