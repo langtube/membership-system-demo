@@ -16,7 +16,7 @@
 
 - `free`: 无任何标签
 - `basic`: 拥有 access-team-member=5 标签
-- `pro `: 拥有 access-team-member=10 access-workspace=10 标签 
+- `pro `: 拥有 access-team-member=10 access-workspace=10 标签
 
 ## 流程设计
 
@@ -92,7 +92,7 @@ sequenceDiagram
         - 刷新 data table
 - Workspace 页面和团队成员页面类似
 
-## assessment 没有提到的问题
+## 其他问题
 
 - team member 的访问控制策略
 - 一个用户可不可以属于多个 team？ 例如 team member 提升为 member
