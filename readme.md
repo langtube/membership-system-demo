@@ -20,9 +20,9 @@ TODO docker-compose
     - 如果不匹配：
       - 前端直接隐藏此资源的访问连接
       - 后端抛 403 异常
-      
+
 ### 了解更多 
-- [设计笔记](./docs/design-note.md)
+- [详细设计](./docs/design-note.md)
 - [为什么选择 ABAC?](adr/2022-05-02-access-control.md)
 
 ## ER Diagram
@@ -77,8 +77,4 @@ erDiagram
 
 
 ## Links
-- [设计笔记](./docs/design-note.md)
-- [为什么选择 ABAC?](adr/2022-05-02-access-control.md)
-
-
 - [什么是适用于 AWS 的 ABAC？](https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/introduction_attribute-based-access-control.html)
