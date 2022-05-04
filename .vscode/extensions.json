@@ -1,6 +1,3 @@
 {
-    "recommendations": [
-        "pomdtr.excalidraw-editor",
-        "ms-vscode-remote.remote-containers"
-    ]
+  "recommendations": ["ms-vscode-remote.remote-containers"]
 }

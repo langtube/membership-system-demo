@@ -85,7 +85,12 @@ erDiagram
 
 - Linux
 - Visual Studio Code
-  - [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+
+### 设置开发环境
+
+- 安装 vsc 插件 `ms-vscode-remote.remote-containers`
+  - 参考：[Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+- 在 vsc command palette 中搜索并运行 `remote-containers.reopenInContainer`
 
 ## 技术栈
 
