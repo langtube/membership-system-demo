@@ -11,7 +11,6 @@ import {
   deleteWorkspace,
   mutateWorkspaces,
 } from "../libs/api";
-import { ServerExceptionDto } from "../libs/api";
 
 export default function Workspaces() {
   const { data, isValidating, mutate } = useWorkspaces();
@@ -93,17 +92,14 @@ function AddWorkspaceFormModal() {
         }
       }}
       onFinish={async (values) => {
-        const response = await addWorkspace(values.name);
-        if (!response) {
-          return;
-        }
-        if (response.ok) {
+        const result = await addWorkspace(values.name);
+
+        if (result.ok) {
           message.success("添加 Workspace 成功");
           mutateWorkspaces();
           return true;
         }
-        const err: ServerExceptionDto = await response.json();
-        message.error("添加 Workspace 失败 " + err.message);
+        message.error("添加 Workspace 失败 " + result.error?.message);
       }}
     >
       <ProFormText

@@ -11,7 +11,6 @@ import {
   deleteTeamMember,
   mutateTeamMembers,
 } from "../libs/api";
-import { ServerExceptionDto } from "../libs/api";
 
 export default function TeamMembers() {
   const { data, isValidating, mutate } = useTeamMembers();
@@ -93,21 +92,18 @@ function AddMemberFormModal() {
         }
       }}
       onFinish={async (values) => {
-        const response = await addTeamMember(values.email);
-        if (!response) {
-          return;
-        }
-        if (response.ok) {
+        const result = await addTeamMember(values.email);
+
+        if (result.ok) {
           message.success("添加成员成功");
           mutateTeamMembers();
           return true;
         }
-        const err: ServerExceptionDto = await response.json();
-        if (err?.validationErrors?.find((x) => x.name === "email")) {
+        if (result.error?.validationErrors?.find((x) => x.name === "email")) {
           message.error("成员已存在");
           return true;
         }
-        message.error("添加成员失败 " + err.message);
+        message.error("添加成员失败 " + result.error?.message);
       }}
     >
       <ProFormText name="email" label="Email" placeholder="请输入 Email" />

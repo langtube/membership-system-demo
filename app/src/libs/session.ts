@@ -41,6 +41,6 @@ async function fetchProfile() {
       return result;
     }
   } catch (e: any) {
-    message.error("获取数据失败 " + e?.message);
+    message.error("获取用户数据失败 " + e?.message);
   }
 }

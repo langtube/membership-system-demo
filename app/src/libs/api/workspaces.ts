@@ -1,7 +1,7 @@
-import { message } from "antd";
 import useSWR, { mutate } from "swr";
 
 import { httpClient } from "../http-client";
+import { ApiResult } from "./api-result";
 import { workspacesApiUrl } from "./constants";
 
 export type Workspace = {
@@ -24,9 +24,10 @@ export async function addWorkspace(name: string) {
     const response = await httpClient.post(workspacesApiUrl, {
       json: { name },
     });
-    return response;
+    const result = await response.json();
+    return ApiResult.success(result);
   } catch (e: any) {
-    message.error("添加失败" + e?.message, 5000);
+    return ApiResult.failed(e);
   }
 }
 
@@ -35,8 +36,9 @@ export async function deleteWorkspace(id: string) {
     const response = await httpClient.delete(workspacesApiUrl, {
       json: { id },
     });
-    return response;
+    const result = await response.json();
+    return ApiResult.success(result);
   } catch (e: any) {
-    message.error("删除失败" + e?.message, 5000);
+    return ApiResult.failed(e);
   }
 }

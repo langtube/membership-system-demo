@@ -1,7 +1,7 @@
-import { message } from "antd";
 import useSWR, { mutate } from "swr";
 
 import { httpClient } from "../http-client";
+import { ApiResult } from "./api-result";
 import { teamMembersApiUrl } from "./constants";
 
 export type TeamMember = {
@@ -24,9 +24,10 @@ export async function addTeamMember(email: string) {
     const response = await httpClient.post(teamMembersApiUrl, {
       json: { email },
     });
-    return response;
-  } catch (e: any) {
-    message.error("添加失败" + e?.message, 5000);
+    const result = await response.json();
+    return ApiResult.success(result);
+  } catch (error: any) {
+    return ApiResult.failed(error);
   }
 }
 
@@ -35,8 +36,9 @@ export async function deleteTeamMember(id: string) {
     const response = await httpClient.delete(teamMembersApiUrl, {
       json: { id },
     });
-    return response;
-  } catch (e: any) {
-    message.error("删除失败" + e?.message, 5000);
+    const result = await response.json();
+    return ApiResult.success(result);
+  } catch (error: any) {
+    return ApiResult.failed(error);
   }
 }
