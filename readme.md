@@ -3,11 +3,15 @@
 ## 如何运行
 
 1. clone 代码到本地 `git clone https://github.com/langtube/membership-system-demo membership-system-demo`
-2. 切换到代码目录并启动 docker `cd membership-system-demo & docker-compose up`
+2. 切换到代码目录 `cd membership-system-demo`
+3. 启动 docker `docker-compose up`
 
-### 重新打包
+### 重新编译
 
-运行代码根目录的 `build.sh`
+运行代码根目录运行
+
+1. 赋予执行权限 `chmod +x ./build.sh `
+2. 执行 `./build.sh`
 
 ## 如何体验
 

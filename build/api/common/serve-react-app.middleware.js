@@ -14,7 +14,6 @@ function serveReactAppMiddleware(req, res, next) {
         if (!isExits || (isExits && (0, node_fs_1.statSync)(filePath).isDirectory())) {
             filePath = (0, path_1.join)(process.cwd(), '../app', '/index.html');
         }
-        console.log("serve",url,filePath)
         res.sendFile(filePath);
     }
 }

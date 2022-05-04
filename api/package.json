@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "prebuild": "rimraf ../build/api",
-    "build": "nest build --path ./tsconfig.build.json && cp package.json ../build/api/package.json",
+    "build": "nest build --path ./tsconfig.build.json && cp package.json ../build/api/package.json && cp .env ../build/api/.env",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "NODE_ENV=development nest start --watch  --path ./tsconfig.json",

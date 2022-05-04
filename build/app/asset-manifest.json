@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.86254728.chunk.js",
-    "main.js.map": "/static/js/main.86254728.chunk.js.map",
+    "main.js": "/static/js/main.8d67c94f.chunk.js",
+    "main.js.map": "/static/js/main.8d67c94f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4fab90dd.js",
     "runtime-main.js.map": "/static/js/runtime-main.4fab90dd.js.map",
     "static/css/2.15544843.chunk.css": "/static/css/2.15544843.chunk.css",
-    "static/js/2.fbffe937.chunk.js": "/static/js/2.fbffe937.chunk.js",
-    "static/js/2.fbffe937.chunk.js.map": "/static/js/2.fbffe937.chunk.js.map",
+    "static/js/2.8fe6ebd5.chunk.js": "/static/js/2.8fe6ebd5.chunk.js",
+    "static/js/2.8fe6ebd5.chunk.js.map": "/static/js/2.8fe6ebd5.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.15544843.chunk.css.map": "/static/css/2.15544843.chunk.css.map",
-    "static/js/2.fbffe937.chunk.js.LICENSE.txt": "/static/js/2.fbffe937.chunk.js.LICENSE.txt",
+    "static/js/2.8fe6ebd5.chunk.js.LICENSE.txt": "/static/js/2.8fe6ebd5.chunk.js.LICENSE.txt",
     "static/media/BasicLayout.e3298205.less": "/static/media/BasicLayout.e3298205.less",
     "static/media/GridContent.96954e72.less": "/static/media/GridContent.96954e72.less",
     "static/media/Header.46339345.less": "/static/media/Header.46339345.less",
@@ -51,7 +51,7 @@
   "entrypoints": [
     "static/js/runtime-main.4fab90dd.js",
     "static/css/2.15544843.chunk.css",
-    "static/js/2.fbffe937.chunk.js",
-    "static/js/main.86254728.chunk.js"
+    "static/js/2.8fe6ebd5.chunk.js",
+    "static/js/main.8d67c94f.chunk.js"
   ]
 }
