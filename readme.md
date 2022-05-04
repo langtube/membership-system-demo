@@ -12,12 +12,18 @@ TODO docker-compose
   - `用户` 被赋某个 `Role`/Plan 
   - `Role` 拥有动态的 `accessTags`（权限列表），可以通过修改 `accessTags` 来控制`用户`的可用`资源 `
     - 例如： 
-    - `pro` 拥有 access-team-member=10 和 access-workspace=10 标签（权限列表）
-    - `basic` 拥有 access-team-member=5 标签（权限列表）
-  - `资源`拥有静态的 `accessTags`，同时拥有这些 `accessTags` 的`用户`才可以访问此`资源`
-    - 如果`用户`不匹配此`资源`的 `accessTags`：
+    - `pro` 角色的 `accessTags`： access-team-member=10 和 access-workspace=10
+    - `basic` 角色的 `accessTags`： access-team-member=5
+  - `资源`拥有静态的(代码硬编码) `accessTags`
+    - 例如 Workspace 功能的 `accessTags` 是： access-workspace  
+    - `用户`的 `accessTags` 完全匹配`资源`的 `accessTags` ，才可以访问
+    - 如果不匹配：
       - 前端直接隐藏此资源的访问连接
       - 后端抛 403 异常
+      
+### 了解更多 
+- [设计笔记](./docs/design-note.md)
+- [为什么选择 ABAC?](adr/2022-05-02-access-control.md)
 
 ## ER Diagram
 
