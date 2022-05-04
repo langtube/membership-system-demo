@@ -1,6 +1,6 @@
 # 用户系统 设计笔记
 
-基于 ABAC 的用户系统。 [为什么选择 ABAC。](adr/2022-05-02-access-control.md)
+基于 ABAC 的用户系统。 [为什么选择 ABAC?](adr/2022-05-02-access-control.md)
 
 ## 访问控制策略：
 
@@ -12,12 +12,11 @@
 - `team member`： 拥有 access-team-member 标签的用户可以访问。
 - `workspace`：拥有 access-workspace 标签的用户可以访问。
 
-### 资源组设置
+### 角色设置
 
 - `free`: 无任何标签
 - `basic`: 拥有 access-team-member=5 标签
-- `pro `: 拥有 access-team-member=10 access-workspace=10 标签
-- `basic-updated`(演示修改资源组): 拥有 access-team-member=5 access-workspace=5 标签
+- `pro `: 拥有 access-team-member=10 access-workspace=10 标签 
 
 ## 流程设计
 
