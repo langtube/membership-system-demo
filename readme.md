@@ -48,7 +48,7 @@ chmod +x ./build.sh && ./build.sh
 ### 了解更多
 
 - [详细设计](./docs/design-note.md)
-- [为什么选择 ABAC?](adr/2022-05-02-access-control.md)
+- [为什么选择 ABAC?](./docs/adr/2022-05-02-access-control.md)
 
 ## ER Diagram
 
