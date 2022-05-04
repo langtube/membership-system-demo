@@ -1,7 +1,6 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { serveReactAppMiddleware } from './common/serve-react-app.middleware';
 import { AuthModule } from './features/auth/auth.module';
 import { TeamModule } from './features/team/team.module';
 import { UserModule } from './features/user/user.module';
@@ -9,7 +8,13 @@ import { WorkspaceModule } from './features/workspace/workspace.module';
 
 @Module({
   imports: [UserModule, AuthModule, TeamModule, WorkspaceModule],
-  controllers: [AppController],
-  providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    if (process.env.NODE_ENV === 'production') {
+      consumer
+        .apply(serveReactAppMiddleware)
+        .forRoutes({ path: '*', method: RequestMethod.ALL });
+    }
+  }
+}
