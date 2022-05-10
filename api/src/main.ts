@@ -1,4 +1,3 @@
-import { config as envSetup } from 'dotenv';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import * as passport from 'passport';
@@ -10,25 +9,23 @@ import {
   setupSwagger,
   validationExceptionFactory,
 } from './common';
+import { setupConfig } from './common/config';
 
 async function bootstrap() {
   const logger = new Logger('api:bootstrap');
-  envSetup();
-  const apiGlobalPrefix = process.env.API_GLOBAL_PREFIX;
-  if (!apiGlobalPrefix) {
-    throw new Error('请设置环境变量 API_GLOBAL_PREFIX');
-  }
-  const sessionCookieName = process.env.SESSION_COOKIE_NAME;
-  if (!sessionCookieName) {
-    throw new Error('请设置环境变量 SESSION_COOKIE_NAME');
-  }
-  const sessionSecret = process.env.SESSION_SECRET;
-  if (!sessionSecret) {
-    throw new Error('请设置环境变量 SESSION_SECRET');
-  }
+
+  const { apiGlobalPrefix, sessionCookieName, sessionSecret } = setupConfig();
 
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix(apiGlobalPrefix);
+
+  if (process.env.NODE_ENV === 'development') {
+    app.enableCors({
+      credentials: true,
+      origin: ['http://localhost:3000'],
+    });
+  }
+
+  setupSwagger(app);
 
   /**
    * NOTICE
@@ -65,14 +62,7 @@ async function bootstrap() {
   const { httpAdapter } = app.get(HttpAdapterHost);
   app.useGlobalFilters(new GlobalExceptionsFilter(httpAdapter));
 
-  setupSwagger(app);
-
-  if (process.env.NODE_ENV === 'development') {
-    app.enableCors({
-      credentials: true,
-      origin: ['http://localhost:3000'],
-    });
-  }
+  app.setGlobalPrefix(apiGlobalPrefix);
 
   await app.listen(3003, '0.0.0.0');
 
