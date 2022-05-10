@@ -2,7 +2,7 @@ import { PassportSerializer } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 
 /**
- * 将这个类防到容器后，@nestjs/passord 会自动获取使用
+ * 将这个类放到容器后，@nestjs/passport 会自动获取使用
  */
 @Injectable()
 export class SessionSerializer extends PassportSerializer {

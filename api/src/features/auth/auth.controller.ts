@@ -22,7 +22,7 @@ import { SigninDto } from './auth.dto';
 @Controller('auth')
 export class AuthController {
   /**
-   * @nestjs/passport 使用 AuthGuard 在合适的时候调用 passport.authenticate()
+   * @nestjs/passport 使用 SigninGuard 在合适的时候调用 passport.authenticate()
    * 最终的验证逻辑在 LocalStrategy 中实现
    */
   @UseGuards(SigninGuard)
